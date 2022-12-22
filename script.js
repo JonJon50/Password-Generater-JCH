@@ -94,3 +94,38 @@ var upperCase = [
 // Assignment code here
 var generateBtn = document.querySelector("#generate");
 
+
+// Values for characters in password
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+var lowerCase ="abcdefghijklmnopqrstuvwxyz".split('');
+var numbers = "123456789".split('');
+var symbols= "!@#$%^&*()_+".split('');
+
+//To render in the browser - convert the unicode
+var characterStringToArray = function (str) {
+  split = str.split( "upperCase, lowerCase, numbers, symbols" );
+  arr = [];
+  for (var i=0; i<split.length; i++) {
+    char = split[i]
+    if (char !== "") {
+      arr.push(char);
+    }
+  }
+  return arr;
+};
+
+
+
+
+function writePassword() {
+  // variables to hold password values
+  var almostReady = [];
+  var nowReady = "";
+  // this var will hold the desired password length
+  var length = prompt("How long would you like your password to be?\n8-128");
+  if(length < 8 || length > 128) {
+    alert("Your password must be between 8-128 characters")
+    writePassword()
+  } else 
+    // if length is good, ask user what they would like included in password, confirm statements below
+   
