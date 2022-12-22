@@ -115,8 +115,6 @@ var characterStringToArray = function (str) {
 };
 
 
-
-
 function writePassword() {
   // variables to hold password values
   var almostReady = [];
