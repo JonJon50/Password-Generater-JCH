@@ -126,6 +126,35 @@ function writePassword() {
   if(length < 8 || length > 128) {
     alert("Your password must be between 8-128 characters")
     writePassword()
-  } else 
-    // if length is good, ask user what they would like included in password, confirm statements below
-   
+  } else {
+    // if is good, ask if the user would like included in password, in the statements below
+    if(confirm("Would you like uppercase letters in your password?")) {
+      almostReady = almostReady.concat(upperCase);
+    }
+    if(confirm("Would you like lowercase letters in your password?")){
+      almostReady = almostReady.concat(lowerCase);
+    }
+    if(confirm("Would you like numbers in your password?")){
+      almostReady = almostReady.concat(numbers);
+    }
+    if(confirm("Would you like symbols to be in your password?")){
+      almostReady = almostReady.concat(symbols);
+    }
+    
+    if(almostReady.length === 0) {
+      alert("You must have at least one character type in your password");
+      writePassword()
+      // outcome here
+    } else {
+      for (var i = 0; i < length; i++) {
+        var random = Math.floor(Math.random() * almostReady.length);
+        nowReady += almostReady[random]
+      }
+    }
+    // Pass the password into the element's text area
+    document.getElementById("password").innerHTML = nowReady
+  }
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
