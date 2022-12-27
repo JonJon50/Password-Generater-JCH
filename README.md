@@ -16,7 +16,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 Follow directions in pop down to meet desired password.
 
-![alt text](/classwork/Password-Generater-JCH/images/Screenshot%20PG.jpg)
+![alt text](/images/Screenshot%20PG.jpg)
 
 
 ## UCF, John Hagens
